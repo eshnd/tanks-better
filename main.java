@@ -1,15 +1,17 @@
 class Main {
   public static void main(String args[]) {
-        System.out.println(compute(x, y, wind));
+        System.out.println(compute(xres, yres, X, Y, wind));
     }
 
-    public static int compute(int X, int Y, double wind) {
+    public static int compute(int xres, int yres, int X, int Y, double wind) {
         double P = 80;
         double g = 0.07102;
         double v = 0.0714 * P + 1.47;
         double v_w = 0.0587 * wind;
-        X = ((X*84)/201)-119;
+        X = (((X-119)*84)/201);
         Y = (Y*84)/201;
+        X = X*Math.round(1179/(xres));
+        Y = Y*Math.round(2556/(yres));
         
         double min_diff = 1000;
         int best_angle = 0;
